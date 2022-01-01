@@ -18,13 +18,10 @@ def login():
 def update_user():
     pass
 
-def time_today():
+def time_left(deadline_y, deadline_m, deadline_d):
     current_time = datetime.datetime.now()
-    minutes = int(current_time.strftime('%M'))
-    hours_left_today = 24 - int(current_time.strftime('%H'))
-    if minutes >= 30:
-        hours_left_today -= 1  
-    return hours_left_today
+    deadline_time = datetime.datetime(deadline_y, deadline_m, deadline_d)
+    remaining_days = (deadline_time - current_time).days
 
 def total_hours():
     pass
