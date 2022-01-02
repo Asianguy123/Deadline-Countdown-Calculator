@@ -27,6 +27,18 @@ def time_today():
         hours_subbed = current_time.hour + 1
     elif current_time.minute < 30:
         hours_subbed = current_time.hour
+        
+    if wknd:
+        if (24 - hours_subbed) < 10:
+            hours = 24 - hours_subbed
+        else:
+            hours = 10
+    if not wknd:
+        if (24 - hours_subbed) < 6:
+            hours = 24 - hours_subbed
+        else:
+            hours = 6
+    return hours
 
 def total_hours():
     pass
