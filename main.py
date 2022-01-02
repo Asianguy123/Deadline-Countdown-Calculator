@@ -18,12 +18,15 @@ def login():
 def update_user():
     pass
 
-def time_left(deadline_y, deadline_m, deadline_d):
+def time_today():
+    wknd = False
     current_time = datetime.datetime.now()
-    deadline_time = datetime.datetime(deadline_y, deadline_m, deadline_d)
-    remaining_days = (deadline_time - current_time).days
-    remaining_seconds = (deadline_time - current_time).seconds
-    return remaining_days, remaining_seconds
+    if calendar.weekday(current_time.year, current_time.month, current_time.day) >= 5:
+        wknd = True
+    if current_time.minute >= 30:
+        hours_subbed = current_time.hour + 1
+    elif current_time.minute < 30:
+        hours_subbed = current_time.hour
 
 def total_hours():
     pass
