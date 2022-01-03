@@ -1,8 +1,14 @@
 # Deadline Calculator
 
+# ------------------------------------------------------------------------------------------------
+# Imports
+
 import time
 import datetime
 import calendar
+
+# ------------------------------------------------------------------------------------------------
+# Calculation Functions
 
 def time_today():
     wknd = False
@@ -39,6 +45,9 @@ def hours_to_work(hours_today, deadline_y, deadline_m, deadline_d):
             free_hours += 6
     return free_hours
 
+# ------------------------------------------------------------------------------------------------
+# Main Function
+
 def main():
     print('Welcome to Deadline Calculator')
     time.sleep(1)
@@ -48,6 +57,9 @@ def main():
     working_hours = hours_to_work(time_today(), int(year), int(month), int(date))
     print(f'You have {working_hours} hours left to complete your assignment')
     exit = input('Calculation complete, hit enter to close:  ')
+
+# ------------------------------------------------------------------------------------------------
+# Runs Program
 
 if __name__ == '__main__':
     main()
