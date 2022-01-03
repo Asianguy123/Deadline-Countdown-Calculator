@@ -1,4 +1,4 @@
-# Calculations + User handling
+# Deadline Calculator
 
 import time
 import datetime
@@ -40,13 +40,14 @@ def hours_to_work(hours_today, deadline_y, deadline_m, deadline_d):
     return free_hours
 
 def main():
-    print('Welcome to Deadline Calculator bestie <3')
+    print('Welcome to Deadline Calculator')
     time.sleep(1)
     year = input('Enter the deadline year in yyyy format:  ')
     month = input('Enter the deadline month in mm format:  ')
     date = input('Enter the deadline date in dd format:  ')
     working_hours = hours_to_work(time_today(), int(year), int(month), int(date))
     print(f'You have {working_hours} hours left to complete your assignment')
+    exit = input('Calculation complete, hit enter to close:  ')
 
 if __name__ == '__main__':
     main()
