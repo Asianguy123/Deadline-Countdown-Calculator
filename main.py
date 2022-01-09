@@ -62,12 +62,12 @@ def main():
     year = input('Enter the deadline year in yyyy format:  ')
     month = input('Enter the deadline month in mm format:  ')
     date = input('Enter the deadline date in dd format:  ')
-    working_hours = hours_to_work(time_today(), int(year), int(month), int(date))
-    print(f'You have {working_hours} hours left to complete your assignment')
-    exit = input('Calculation complete, hit enter to close:  ') # so that the shell doesnt close before output can be read
+    working_hours = hours_to_work(time_today(), int(year), int(month), int(date))   
+    print(f'You have {working_hours} hours left to complete your assignment\n')
 
 # ------------------------------------------------------------------------------------------------
 # Runs Program
 
 if __name__ == '__main__':
-    main()
+    while True:
+        main()
