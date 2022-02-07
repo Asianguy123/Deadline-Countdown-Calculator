@@ -11,6 +11,10 @@ import calendar
 # Calculation Functions
 
 def time_today():
+    '''
+    Calculates hours left on current day at point of program running
+    '''
+
     wknd = False
     current_time = datetime.datetime.now()
 
@@ -30,6 +34,7 @@ def time_today():
             hours = 24 - hours_subbed
         else:
             hours = 10
+
     # if today is a weekday, give appropriate remaining hours
     if not wknd:
         if (24 - hours_subbed) < 6:
@@ -39,6 +44,10 @@ def time_today():
     return hours
     
 def hours_to_work(hours_today, deadline_y, deadline_m, deadline_d):
+    '''
+    Calculates total hours left before deadline date
+    '''
+
     free_hours = hours_today
     d0 = datetime.datetime.today()
     d1 = datetime.datetime(deadline_y, deadline_m, deadline_d)
@@ -57,6 +66,10 @@ def hours_to_work(hours_today, deadline_y, deadline_m, deadline_d):
 # Main Function
 
 def main():
+    '''
+    Main Function - takes user input and outputs text
+    '''
+
     print('Welcome to Deadline Calculator')
     time.sleep(1)
     year = input('Enter the deadline year in yyyy format:  ')
